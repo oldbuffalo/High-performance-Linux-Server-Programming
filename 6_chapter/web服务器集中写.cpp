@@ -24,8 +24,8 @@ static const char* HTTP_ACK[2] ={"200 OK","400 error"};
 int main(int argc,char** argv)
 {
 	//传入ip 和 port 文件名  因此参数是4个
-	if(argc <= 2){
-		printf("usage:%s ip port\n",argv[0]);
+	if(argc <= 3){
+		printf("usage:%s ip port filename\n",argv[0]);
 		exit(-1);
 	}
 
