@@ -132,6 +132,8 @@ int main(int argc,char* argv[])
 				//如果客户端关闭了  服务器也关闭对应的连接,并将用户总数减1
 				users[fds[i].fd] = users[fds[user_count].fd];
 				close(fds[i].fd);
+				fds[i].fd = -1;
+				bzero(&fds[i].revents,sizeof(fds[i].revents));// 很关键
 				//拿最后一个填入空位 
 				//因为user_count减1了,所以填入前面通过减i检测这上面的事件
 				//下次新的连接来 分配的是可用的最小的fd,因此这个被填入的fd

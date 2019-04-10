@@ -33,7 +33,7 @@ int main(int argc,char* argv[])/*传入ip port backlog*/
 	
 	int ret = bind(sockfd,(struct sockaddr*)&addr,sizeof(addr));
 	assert(ret != -1);
-	ret = listen(sockfd,5);
+	ret = listen(sockfd,1);
 	assert(ret != -1);
 
 		
